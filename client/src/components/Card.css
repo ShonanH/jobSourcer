@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+.card--container {
+  display: flex;
+  height: 220px;
+  width: 480px;
+  color: black;
+  border-radius: 9px;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.2s; /* Animation */
+}
+
+.card--logo {
+  height: 28%;
+  width: auto;
+  padding: 30px 15px 0 15px;
+  align-self: start;
+}
+
+.card--description {
+  text-align: start;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(73, 73, 73);
+  padding-top: 26px;
+  font-size: 0.9rem;
+  width: 99%;
+}
+
+.card--rating {
+  text-align: center;
+  width: 17%;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: rgb(132, 216, 7);
+  padding: 5px;
+}
+
+.card--container:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-out;
+  border: 3px solid black;
+}
