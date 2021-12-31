@@ -8,7 +8,7 @@ const CardStats = (props) => {
 
   useEffect(() => {
     axios
-      .get("https://pathrise-jobsource.herokuapp.com//api/get")
+      .get("https://pathrise-jobsourcer.herokuapp.com/api/get")
       .then((res) => {
         const result = res.data;
         const filterRes = result.filter(
