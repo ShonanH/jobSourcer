@@ -7,13 +7,15 @@ const CardStats = (props) => {
   const companyName = props.location.state.name;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/api/get").then((res) => {
-      const result = res.data;
-      const filterRes = result.filter(
-        ({ Job_Source }) => Job_Source === companyName
-      );
-      setAllCompanies(filterRes);
-    });
+    axios
+      .get("https://pathrise-jobsource.herokuapp.com//api/get")
+      .then((res) => {
+        const result = res.data;
+        const filterRes = result.filter(
+          ({ Job_Source }) => Job_Source === companyName
+        );
+        setAllCompanies(filterRes);
+      });
   }, []);
 
   return (
