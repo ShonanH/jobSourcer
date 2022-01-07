@@ -7,7 +7,6 @@ import "./App.css";
 
 function App() {
   const jobData = jobBoards.job_boards;
-  // console.log(jobData);
 
   return (
     <div className="App">
