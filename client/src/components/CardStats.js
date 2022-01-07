@@ -6,17 +6,22 @@ const CardStats = (props) => {
   const [allCompanies, setAllCompanies] = useState([]);
   const companyName = props.location.state.name;
 
-  useEffect(() => {
+  // `https://pathrise-jobsourcer.herokuapp.com/api/get?companyName=${companyName}`;
+  //localhost:4000/api/get?companyName=${companyName}
+
+  http: useEffect(() => {
     axios
-      .get("https://pathrise-jobsourcer.herokuapp.com/api/get")
+      .get(
+        `https://pathrise-jobsourcer.herokuapp.com/api/get?companyName=${companyName}`
+      )
       .then((res) => {
         const result = res.data;
-        const filterRes = result.filter(
-          ({ Job_Source }) => Job_Source === companyName
-        );
-        setAllCompanies(filterRes);
+        // const filterRes = result.filter(
+        //   ({ Job_Source }) => Job_Source === companyName
+        // );
+        setAllCompanies(result);
       });
-  }, []);
+  }, [companyName]);
 
   return (
     <div className="stats--container">

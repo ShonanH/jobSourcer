@@ -16,7 +16,7 @@
 
 .job--cards {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   width: 93%;
   justify-items: center;
@@ -28,4 +28,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .job--cards--container {
+    width: 100%;
+  }
 }
