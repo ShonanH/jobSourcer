@@ -10,10 +10,13 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 con.connect((err, result) => {
+  if (err) console.log("ERROR: ", err);
   app.get("/api/get", (req, res) => {
-    const fetchSelect = "SELECT * FROM samples ORDER BY ID asc";
-    con.query(fetchSelect, (err, result) => {
+    let company = req.query.companyName;
+    const fetchSelect = "SELECT * FROM samples WHERE Job_Source = ? ";
+    con.query(fetchSelect, [company], (err, result) => {
       if (err) console.log("ERROR: ", err);
+      console.log(result);
       res.send(result);
     });
   });
