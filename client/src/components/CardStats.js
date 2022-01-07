@@ -6,7 +6,7 @@ const CardStats = (props) => {
   const [allCompanies, setAllCompanies] = useState([]);
   const companyName = props.location.state.name;
 
-  http: useEffect(() => {
+  useEffect(() => {
     axios
       .get(
         `https://pathrise-jobsourcer.herokuapp.com/api/get?companyName=${companyName}`
